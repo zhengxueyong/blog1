@@ -1,0 +1,11 @@
+.home{
+    /*width: 100%;*/
+}
+
+footer .home span {
+    background-image: url(/static/base/img/home1.png);
+}
+footer .home .name {
+    color: #ffd601;
+}
+
