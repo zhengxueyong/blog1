@@ -10,6 +10,7 @@ class BaseModel(models.Model):
     class Meta:
         abstract = True
 
+
 # 轮播图　模型类
 # insert into axf_wheel(img,name,trackid)
 class Wheel(BaseModel):
@@ -104,7 +105,7 @@ class Goods(models.Model):
     # 商品规格
     specifics = models.CharField(max_length=100)
     # 商品价格
-    price = models.DecimalField(max_digits=6,decimal_places=2)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
     # 商品超市价格
     marketprice = models.DecimalField(max_digits=6, decimal_places=2)
     # 分类ID
@@ -123,6 +124,7 @@ class Goods(models.Model):
     class Meta:
         db_table = 'axf_goods'
 
+
 # 用户 模型类
 class User(models.Model):
     # 邮箱
@@ -137,7 +139,7 @@ class User(models.Model):
     rank = models.IntegerField(default=1)
 
     class Meta:
-         db_table = 'axf_user'
+        db_table = 'axf_user'
 
 
 # 购物车 模型类
@@ -159,3 +161,76 @@ class Cart(models.Model):
 
     class Meta:
         db_table = 'axf_cart'
+
+
+# 订单 模型类
+# 一个用户 对应 多个订单
+class Order(models.Model):
+    # 用户
+    user = models.ForeignKey(User)
+    # 创建时间
+    createtime = models.DateTimeField(auto_now_add=True)
+    # 更新时间
+    updatetime = models.DateTimeField(auto_now=True)
+    # 状态
+    # -1 过期
+    # 0 未付款
+    # 1 已付款，待发货
+    # 2 已发货，待收货
+    # 3 已收货，待评价
+    # 4 已评价
+    status = models.IntegerField(default=0)
+    # 订单号
+    identifier = models.CharField(max_length=256)
+
+
+# 订单商品 模型类
+# 一个订单 对应 多个商品(订单商品)
+class OrderGoods(models.Model):
+    # 订单
+    order = models.ForeignKey(Order)
+    # 商品
+    goods = models.ForeignKey(Goods)
+
+    ## 商品选择规格
+    number = models.IntegerField()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
