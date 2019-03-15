@@ -1,0 +1,62 @@
+[
+  {
+    "img": "img/fresh1.jpg",
+    "id": 1,
+    "name":"东海小黄鱼",
+    "price":"19.00"
+  },
+  {
+    "img": "img/fresh2.jpg",
+    "id": 2,
+    "name":"越南巴沙鱼柳",
+    "price":"23.80"
+  },
+  {
+    "img": "img/fresh3.jpg",
+    "id": 3,
+    "name":"优选东海带鱼段 ",
+    "price":"29.00"
+  },
+  {
+    "img": "img/fresh4.jpg",
+    "id": 4,
+    "name":"日式素鲍鱼",
+    "price":"19.00"
+  },
+  {
+    "img": "img/fresh5.jpg",
+    "id": 5,
+    "name":"冻半壳扇贝",
+    "price":"42.00"
+  },
+  {
+    "img": "img/fresh6.jpg",
+    "id": 6,
+    "name":"新西兰小牛脊骨",
+    "price":"19.90"
+  },
+  {
+    "img": "img/fresh7.jpg",
+    "id": 7,
+    "name":"江西原生态散养土鸡蛋",
+    "price":"29.90"
+  },
+  {
+    "img": "img/fresh8.jpg",
+    "id": 8,
+    "name":"苏食童子鸡 ",
+    "price":"29.00"
+  },
+  {
+    "img": "img/fresh9.jpg",
+    "id": 9,
+    "name":"巴西精选牛腩块",
+    "price":"32.90"
+  },
+  {
+    "img": "img/fresh10.jpg",
+    "id": 10,
+    "name":"南翔小笼包",
+    "price":"9.90"
+  }
+]

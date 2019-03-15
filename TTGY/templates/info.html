@@ -1,0 +1,296 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+    <link href="{% static 'info/info.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'img/tit.png' %}"/>
+    <script src="{% static 'info/js/jquery-1.12.3.js' %}"></script>
+    <script src="{% static 'info/js/info.js' %}"></script>
+    <script src="{% static 'info/js/jquery.cookie.js' %}"></script>
+  <!--  <script src="js/json.js"></script>-->
+    <script src="js/move.js"></script>
+     <script src="{% static 'cart_temp.js' %}"></script>
+
+</head>
+<body>
+<!--加入购物车弹出框-->
+<div id="add_cart">
+    <div class="add_cart_top"><i class="close"><img src="{% static 'img/cha.png'%}"></i></div>
+    <div class="add_cart_center">
+        <p><i></i>加入购物车成功！</p>
+        <div class="add_cart_text">购物车共<span class="add_cart_num"></span>件商品|商品共计<span class="add_cart_sum"></span></div>
+    </div>
+    <div class="add_cart_bottom">
+        <a href="../index/index.html" id="continue">继续购物</a>
+        <a href="../cart/cart.html" class="go_to_pay">去结算</a>
+    </div>
+</div>
+
+
+<div class="top">
+    <div class="top_content">
+        <div class="top_left">
+            <p><i class="icon03"></i> <span id="address">上海<i class="trans"></i></span> 满百包邮（环郊内）<a href="#" style="color: #64a131">星夜达</a></p>
+        </div>
+        <div class="top_right">
+            <ul>
+                <li class="user"></li>
+                <li><a class="act aaa" href="../login/login.html">[登录]</a></li>
+                <li><a class="act aaa" href="../register/register.html">[注册有惊喜] </a>|</li>
+                <li id="notice"><a href="#">果园公告 </a>
+                    <div id="top_right_notice">
+                        <ul>
+                            <li>全仓2000元充值活动调整公告<i><img src="{% static 'img/new.png'%}"></i></li>
+                            <li>全仓2000元充值活动调整公告<i><img src="{% static 'img/new.png'%}"></i></li>
+                            <li>全仓充值活动调整公告</li>
+                        </ul>
+                        <a>查看更多 &gt;</a>
+                    </div>
+                </li>
+                <li>|<a class="act" href="#">券卡兑换 </a>|</li>
+                <li id="phone"><a href="#"><i class="icon01"></i> 手机果园</a>
+                    <!--隐藏的盒子-->
+                    <div id="top_right_phone">
+                        <p><span>下载果园app，</span>既享果园特价商品</p>
+                        <div class="phone_top">
+                            <div class="phone_top_left"><img src="{% static 'img/phone2.jpg'%}"></div>
+                            <div class="phone_top_right"><img src="{% static 'img/guan_btn01.jpg'%}"><br><img src="{% static 'img/guan_btn01.jpg'%}"></div>
+                        </div>
+                        <hr>
+                        <div class="phone_bottom">
+                            <div class="phone_bottom_left"><img src="{% static 'img/phone1.jpg'%}"></div>
+                            <div class="phone_bottom_right"><p><span>关注果园微信</span><br>优惠信息实时掌握</p></div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#" style="width: 150px; font-weight: bold"><i class="icon02"></i>400-720-0770</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--导航-->
+<div class="nav">
+    <div class="nav_content">
+        <div class="nav_left">
+            <a href="../index/index.html"><img src="{% static 'img/logo.svg'%}"></a>
+        </div>
+        <div class="nav_center">
+            <ul>
+                <li><a href="../index/index.html">首页<br>Home</a></li>
+                <li><a>鲜果<br>Fruit</a></li>
+                <li><a>生鲜<br>Fresh</a></li>
+                <li><a>礼品<br>Gift</a></li>
+                <li><a>会员中心<br>VIP Club</a></li>
+            </ul>
+        </div>
+        <div class="nav_right">
+            <div class="nav_right_search">
+                <input id="search" type="text" placeholder="金奇异果"><span id="big"></span><br>
+                <p>热门：<a>香梨</a> <a>奇异果</a> <a>苹果</a> <a>柚子</a></p>
+            </div>
+
+            <div id="nav_right_cart">
+                <span id="nav_cart_num"></span>
+            </div>
+        </div>
+    </div>
+    <!--隐藏的盒子-->
+    <div id="cart_content">
+        <ul id="cart_list">
+
+        </ul>
+        <div class="cart_btn">
+            <div class="cart_list_text">
+                购物车共<span class="add_cart_num">22</span>
+                件商品<span class="cart_o"> 商品共计<span class="add_cart_sum">￥1888.40</span></span>
+            </div>
+            <a href="../cart/cart.html">立即结算</a>
+        </div>
+    </div>
+</div>
+
+<!--商品介绍购买-->
+<div class="main">
+    <div class="main_content">
+        <p class="main_nav"><b>首页</b> &gt;新鲜水果 &gt;<!--<span>泰国山竹</span>--></p>
+        <div id="main_left">
+            <!--<img src="img/fruit_small_1.0.jpg">
+            <img src="img/fruit_small_1.1.jpg">
+            <img src="img/fruit_small_1.2.jpg">-->
+        </div>
+        <div id="main_center">
+            <!--<img class="smallImg" src="img/fruit_big_1.0.jpg">
+            <img class="smallImg" src="img/fruit_big_1.1.jpg">
+            <img class="smallImg" src="img/fruit_big_1.2.jpg">
+            <div id="smallArea"></div>-->
+        </div>
+
+        <div id="bigArea">
+            <img id="bigImg" src="{% static ''%}">
+        </div>
+
+        <div class="main_right">
+            <div class="introduce">
+                <!--<h3 id="name">泰国山竹</h3>
+                <p id="introduce_text">果肉甜沁 点亮味蕾</p>-->
+            </div>
+
+            <div class="price">
+                <div class="price_left"><h5>果园价</h5><!--<b id="i_price">￥99.00</b>--></div>
+                <div class="price_right"><i></i></div>
+            </div>
+            <div class="norms"><h5>规格</h5> <!--<input type="button" value="4个">--></div>
+            <div class="address"><h5>配送至</h5>
+               <div class="more_address"><p id="selected_add">上海</p><span>有货</span></div>
+            </div>
+            <div class="number">
+                <h5>数量</h5>
+                    <input type="button" class="info_cut" value="-">
+                    <input id="num_number" type="button" value="1">
+                    <input type="button" class="info_add" value="+">
+            </div>
+
+            <div class="main_btn"> <input id="buy" type="button" value="立即购买">
+                  <input id="add_car" type="button" value="加入购物车">
+            </div>
+
+            <hr>
+
+            <div class="detail">
+                <ul>
+                    <li>甜度<span><img src="{% static 'img/circle-4.png'%}"></span></li>
+                    <li>产地<span id="origin">泰国</span></li>
+                    <li>储存方式<span>0冷藏</span></li>
+                    <li>备注<span>单个重800-1000g</span></li>
+                    <li>商品编号<span id="code">2160831107</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--商品简介和顾客评价、最近浏览-->
+
+<div class="good">
+    <div class="good_content">
+
+        <!--商品简介和顾客评价-->
+        <div id="good_left">
+
+
+            <div id="btn_top">
+                <input class="active_tab" type="button" value="商品简介">
+                <input type="button" value="顾客评价（111）">
+                <a id="add_car_logo"><i></i>加入购物车</a>
+            </div>
+
+
+            <div id="recommend">
+                <img src="{% static 'img/a_fruit1.png'%}">
+            </div>
+
+            <!--评价-->
+            <div id="evaluation">
+                <div class="sum">
+                    <div class="sum_left"><p>100%</p><span>好评度</span></div>
+                    <div class="sum_center">
+                        <p><span>不错哟</span><i></i><span>100%</span></p>
+                        <p><span>待提高</span><i></i><span>0%</span></p>
+                        <p><span>小失落</span><i></i><span>0%</span></p>
+                    </div>
+                    <div class="sum_right">
+                        发布评价即可获得10积分,<br>
+                        APP上传图片并晒单即可获得20积分，前5名可获得双倍积分。
+                    </div>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="eva" checked=""><label>全部评论</label>
+                    <input type="radio" name="eva"><label>不错哟</label>
+                    <input type="radio" name="eva"><label>待提高</label>
+                    <input type="radio" name="eva"><label>小失落</label>
+                </div>
+                <div class="c_img">
+                    <img src="{% static 'img/Evaluate.png'%}">
+                </div>
+
+            </div>
+        </div>
+
+      <!--  最近浏览-->
+        <div class="good_right"></div>
+    </div>
+</div>
+
+
+
+<!--footer-->
+<div class="icons">
+    <div class="icons_content">
+        <ul>
+            <li class="icons_01"></li>
+            <li class="icons_02"></li>
+            <li class="icons_03"></li>
+            <li class="icons_04"></li>
+        </ul>
+    </div>
+</div>
+
+<div class="info">
+    <div class="info_content">
+        <div class="info_logo">
+            <img src="{% static 'img/logo.svg'%}">
+            <p>服务时间<span> 08:00 - 22:00</span></p>
+        </div>
+        <div class="info_wechat">
+            <img src="{% static 'img/phone1.jpg'%}">
+            <p>天天果园官网微信</p>
+        </div>
+        <div class="info_app">
+            <img src="{% static 'img/phone2.jpg'%}">
+            <p>天天果园app</p>
+        </div>
+        <div class="info_table">
+            <table>
+                <tbody><tr>
+                    <th>购物指南</th>
+                    <th>配送说明</th>
+                    <th>售后服务</th>
+                    <th>企业服务</th>
+                </tr>
+                <tr>
+                    <td>新用户注册</td>
+                    <td>运费说明</td>
+                    <td>退换货规则</td>
+                    <td>企业订购</td>
+                </tr>
+                <tr>
+                    <td>在线下单</td>
+                    <td>运费方式</td>
+                    <td>服务保障承诺</td>
+                    <td>公司简介</td>
+                </tr>
+                <tr>
+                    <td>支付方式</td>
+                    <td>发票说明</td>
+                    <td>验货与签售</td>
+                    <td>定制专区</td>
+                </tr>
+            </tbody></table>
+        </div>
+    </div>
+</div>
+
+<div class="copy">
+    <p>版权所有 ©2015天天果园 保留所有版权 |沪ICP备12042163</p>
+    <span>天天果园 鲜果网站</span><br>
+    <span><img src="{% static 'img/guan_shgs.gif'%}">&nbsp;&nbsp;<img src="{% static 'img/guan_wgdjp.png'%}"></span>
+</div>
+
+<div id="back_top">
+    <img src="{% static 'img/kf.png'%}">
+</div>
+</body>
+</html>

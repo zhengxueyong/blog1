@@ -1,0 +1,62 @@
+[
+  {
+    "img": "img/fruit1.jpg",
+    "id": 1,
+    "name":"泰国椰青",
+    "price":"49.90"
+  },
+  {
+    "img": "img/fruit2.jpg",
+    "id": 2,
+    "name":"美国有籽红提",
+    "price":"99.00"
+  },
+  {
+    "img": "img/fruit3.jpg",
+    "id": 3,
+    "name":"丽江雪桃 ",
+    "price":"88.00"
+  },
+  {
+    "img": "img/fruit4.jpg",
+    "id": 4,
+    "name":"泰国山竹 ",
+    "price":"58.00"
+  },
+  {
+    "img": "img/fruit5.jpg",
+    "id": 5,
+    "name":"新西兰柠檬 ",
+    "price":"29.00"
+  },
+  {
+    "img": "img/fruit6.jpg",
+    "id": 6,
+    "name":"云南蒙自石榴 ",
+    "price":"39.90"
+  },
+  {
+    "img": "img/fruit7.jpg",
+    "id": 7,
+    "name":"琯溪白玉蜜柚 ",
+    "price":"39.90"
+  },
+  {
+    "img": "img/fruit8.jpg",
+    "id": 8,
+    "name":"澳大利亚蜜桔 ",
+    "price":"49.90"
+  },
+  {
+    "img": "img/fruit9.jpg",
+    "id": 9,
+    "name":"新疆库尔勒香梨 ",
+    "price":"29.90"
+  },
+  {
+    "img": "img/fruit10.jpg",
+    "id": 10,
+    "name":"奇异小莓 ",
+    "price":"89.00"
+  }
+]
