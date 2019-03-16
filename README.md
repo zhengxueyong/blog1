@@ -18,3 +18,20 @@ def register(request):
             return response
         except:
             return render(request,'register.html')
+def login(request):
+    if request.method=='GET':
+        return render(request,'login.html')
+    elif request.method=='POST':
+
+        name=request.POST.get('name')
+        password=request.POST.get('password')
+        users=User.objects.filter(u_name=name).filter(u_password=genrate_password(password))
+        if users.exists():
+            user=users.first()
+            user.token=genrate_token()
+            user.save()
+            response=redirect('pet:homepage')
+            request.session['token']=user.token
+            return response
+        else:
+            return render(request,'login.html')
